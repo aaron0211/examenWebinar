@@ -5,43 +5,18 @@ import java.util.*;
 public class Concurso {
 
 	private Cuadro cuadro;
-	private int puntuacion;
-	private boolean puntuado;
 	
 	List<Visitante> visitantes;
 	
-	public Concurso(Cuadro cuadro, int puntuacion, boolean puntuado) {
-		super();
-		this.cuadro = cuadro;
-		this.puntuacion = puntuacion;
-		this.puntuado = puntuado;
-		
-		visitantes = new ArrayList<>();
+	public void Puntuar(Visitante visitante,Cuadro cuadro,int puntos) {
+		if(!visitantes.contains(visitante)) {
+			System.out.println("Debes de registarte para poder puntuar");
+		}
+		if(puntos<0 || puntos>5) {
+			System.out.println("Tienes que puntuar de 0 a 5");
+		}else {
+			int pTotales = cuadro.getPuntuacionTotal()+puntos;
+			this.cuadro.setPuntuacionTotal(pTotales);
+		}
 	}
-
-	public Cuadro getCuadro() {
-		return cuadro;
-	}
-	
-	public void setCuadro(Cuadro cuadro) {
-		this.cuadro = cuadro;
-	}
-	
-	public int getPuntuacion() {
-		return puntuacion;
-	}
-	
-	public void setPuntuacion(int puntuacion) {
-		this.puntuacion = puntuacion;
-	}
-	
-	public boolean isPuntuado() {
-		return puntuado;
-	}
-	
-	public void setPuntuado(boolean puntuado) {
-		this.puntuado = puntuado;
-	}
-	
-	
 }

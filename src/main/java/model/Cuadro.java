@@ -6,6 +6,7 @@ public class Cuadro {
 	private String tecnica;
 	private int ancho;
 	private int alto;
+	private int PuntuacionTotal;
 	
 	public Cuadro(String nombre, String tecnica, int ancho, int alto) {
 		super();
@@ -45,5 +46,13 @@ public class Cuadro {
 
 	public void setAlto(int alto) {
 		this.alto = alto;
+	}
+
+	public int getPuntuacionTotal() {
+		return PuntuacionTotal;
+	}
+
+	public void setPuntuacionTotal(int puntuacionTotal) {
+		PuntuacionTotal = puntuacionTotal;
 	}
 }
