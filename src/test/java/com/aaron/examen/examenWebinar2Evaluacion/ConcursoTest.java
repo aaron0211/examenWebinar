@@ -23,7 +23,6 @@ public class ConcursoTest {
 	public void Puntuar() {
 		int puntos=4;
 		visitantes.add(visitante1);
-		System.out.println(visitantes.toString());
 		if(!visitantes.contains(visitante1)) {
 			System.out.println("Debes de registarte para poder puntuar");
 		}else {
@@ -35,6 +34,21 @@ public class ConcursoTest {
 			}
 		}
 		assertEquals(4,cuadro.getPuntuacionTotal());
+		
+		visitantes.add(visitante2);
+		puntos = 5;
+		if(!visitantes.contains(visitante2)) {
+			System.out.println("Debes de registarte para poder puntuar");
+		}else {
+			if(puntos<0 || puntos>5) {
+				System.out.println("Tienes que puntuar de 0 a 5");
+			}else {
+				int pTotales = cuadro.getPuntuacionTotal()+puntos;
+				this.cuadro.setPuntuacionTotal(pTotales);
+			}
+		}
+		assertEquals(9,cuadro.getPuntuacionTotal());
+		
 	}
 	
 }
